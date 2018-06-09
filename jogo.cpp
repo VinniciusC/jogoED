@@ -1,4 +1,6 @@
 #include <iostream>
+#include <chrono>
+#include <thread>
 #include "ListaProdutos.h"
 #include "CadastraProdutos.h"
 #ifdef __cplusplus__
@@ -8,19 +10,37 @@
 #endif
 
 using namespace std;
+using std::this_thread::sleep_for;
+using std::chrono::milliseconds;
 
-void refresh(){
+void refresh(){ //Limpa a tela tanto em windows quanto em linux
 	if (system("CLS")) system("clear");
 }
 
-int prefacio(){
-    //Tela 1 - Prefácio
-    int opcao = 1;
+void slow_print(const  string &message, unsigned int millis_per_char){ //Funcao para dar o efeito de digitação nas mensagens
+    for(const char c: message)
+    {
+        cout << c << flush;
+        sleep_for(milliseconds(millis_per_char));
+    }
+}
 
-    cout << "Sua mae te mandou ir ao mercado fazer compras." << endl;
-    cout << "Ela lhe deu uma LISTA DE COMPRAS." << endl;
-    cout << "Voce deve trazer todos os itens corretos. Nao decepcione sua mae." << endl << endl;
-    cout << "Aperte 0 para continuar..." << endl << endl;
+int prefacio(){ //Tela inicial que conta a história inicial 
+    refresh();
+
+    int opcao = 1;
+    
+    string message = "Sua mae te mandou ir ao mercado fazer compras.\n";
+    slow_print(message, 30);
+
+    message = "Ela lhe deu uma LISTA DE COMPRAS.\n";
+    slow_print(message, 30);
+
+    message = "Voce deve trazer todos os itens corretos. Nao decepcione sua mae.\n\n";
+    slow_print(message, 30);
+
+    message = "Aperte 0 para continuar...\n\n";
+    slow_print(message, 30);
 
     while(opcao != 0){
         cin >> opcao;
@@ -29,21 +49,36 @@ int prefacio(){
     return opcao;
 }
 
-int lista_inicial(){
-    //Tela 2 - Gera a lista aleatoriamente e printa na tela
-
-}
-
-int prefacio_2(){
-
+int lista_inicial(){ //Tela que gera a lista de compras aleatoriamente e printa na tela
     refresh();
-    //Tela 3 - Perda da LISTA DE COMPRAS
     int opcao = 1;
 
-    cout << "Ao chegar no mercado, voce percebe que perdeu a LISTA DE COMPRAS" << endl;
-    cout << "Conhecendo bem sua mae, voce sabe que nao pode voltar de maos vazias, muito menos com os produtos errados." << endl;
-    cout << "Navegue pelo menu e efetue a compra dos itens corretos." << endl << endl;
-    cout << "Aperte 0 para continuar..." << endl << endl;
+    string message = "Aperte 0 para continuar...\n\n";
+    slow_print(message, 30);
+
+    while(opcao != 0){
+        cin >> opcao;
+    }
+
+    return opcao;
+}
+
+int prefacio_2(){ //Tela que conta a história da perda da lista
+    refresh();
+
+    int opcao = 1;
+
+    string message = "Ao chegar no mercado, voce percebe que perdeu a LISTA DE COMPRAS\n";
+    slow_print(message, 30);
+
+    message = "Conhecendo bem sua mae, voce sabe que nao pode voltar de maos vazias, muito menos com os produtos errados.\n";
+    slow_print(message, 30);
+
+    message = "Navegue pelo menu e efetue a compra dos itens corretos\n\n";
+    slow_print(message, 30);
+
+    message = "Aperte 0 para continuar...\n\n";
+    slow_print(message, 30);
 
     while(opcao != 0){
         cin >> opcao;
@@ -59,8 +94,10 @@ int main(){
     opcao = prefacio();
 
     if(opcao == 0)
+        opcao = lista_inicial();
+        
+    if(opcao == 0)
         opcao = prefacio_2();
-
 
 
     return 0;
