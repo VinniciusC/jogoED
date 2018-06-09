@@ -1,4 +1,5 @@
 #include <iostream>
+#include "ListaProdutos.h"
 
 using namespace std;
 
