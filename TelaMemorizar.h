@@ -9,6 +9,7 @@
 #include <time.h>
 #include "CadastraProdutos.h"
 #include "funcoes_comuns.h"
+#include "ListaProdutos.h"
 
 void imprimeLista(Lista& l1)
 {

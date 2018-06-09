@@ -14,6 +14,7 @@ using std::chrono::milliseconds;
 
 int prefacio(){ //Tela inicial que conta a hist�ria inicial
 
+    refresh();
     int opcao = 1;
 
     string message = "Sua mae te mandou ir ao mercado fazer compras.\n";
