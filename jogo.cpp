@@ -3,21 +3,15 @@
 #include <thread>
 #include "ListaProdutos.h"
 #include "CadastraProdutos.h"
-#ifdef __cplusplus__
-  #include <cstdlib>
-#else
-  #include <stdlib.h>
-#endif
+#include "menus.h"
+#include "funcoes_comuns.h"
 
 using namespace std;
 using std::this_thread::sleep_for;
 using std::chrono::milliseconds;
 
-void refresh(){ //Limpa a tela tanto em windows quanto em linux
-	if (system("CLS")) system("clear");
-}
 
-void slow_print(const  string &message, unsigned int millis_per_char){ //Funcao para dar o efeito de digitação nas mensagens
+void slow_print(const  string &message, unsigned int millis_per_char){ //Funcao para dar o efeito de digitaï¿½ï¿½o nas mensagens
     for(const char c: message)
     {
         cout << c << flush;
@@ -25,11 +19,11 @@ void slow_print(const  string &message, unsigned int millis_per_char){ //Funcao 
     }
 }
 
-int prefacio(){ //Tela inicial que conta a história inicial 
+int prefacio(){ //Tela inicial que conta a histï¿½ria inicial
     refresh();
 
     int opcao = 1;
-    
+
     string message = "Sua mae te mandou ir ao mercado fazer compras.\n";
     slow_print(message, 30);
 
@@ -63,7 +57,7 @@ int lista_inicial(){ //Tela que gera a lista de compras aleatoriamente e printa 
     return opcao;
 }
 
-int prefacio_2(){ //Tela que conta a história da perda da lista
+int prefacio_2(){ //Tela que conta a histï¿½ria da perda da lista
     refresh();
 
     int opcao = 1;
@@ -95,9 +89,15 @@ int main(){
 
     if(opcao == 0)
         opcao = lista_inicial();
-        
+
     if(opcao == 0)
         opcao = prefacio_2();
+
+    if(opcao == 0){
+        menuCategoria();
+    }
+
+
 
 
     return 0;
