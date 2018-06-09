@@ -80,7 +80,7 @@ void cadastraProdutos(Produto* produtos)
     produtos[23].setNome("Queijo prato");
 
     produtos[24].setID(24);
-    produtos[24].setNome("Linguiça");
+    produtos[24].setNome("Linguica");
 
     produtos[25].setID(25);
     produtos[25].setNome("Queijo minas");
