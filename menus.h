@@ -1,18 +1,25 @@
 #include <iostream>
 #include "funcoes_comuns.h"
+#include "TelaMemorizar.h"
+#include "ListaProdutos.h"
 
 using namespace std;
 
-void menuCategoria();
-void menuBEBIDAS();
-void menuCARNES();
-void menuFRIOS();
-void menuHORTIFRUTI();
-void menuLIMPEZA();
-void menuPADARIA();
+int erros = 0;
+int acertos = 0;
 
-void menuCategoria(){
-    refresh();    
+void menuCategoria(Produto* produtos, Lista& l);
+void menuBEBIDAS(Produto* produtos, Lista& l);
+void menuCARNES(Produto* produtos, Lista& l);
+void menuFRIOS(Produto* produtos, Lista& l);
+void menuHORTIFRUTI(Produto* produtos, Lista& l);
+void menuLIMPEZA(Produto* produtos, Lista& l);
+void menuPADARIA(Produto* produtos, Lista& l);
+
+void verificacao(Produto* produtos, Lista& l, int IDInterno);
+
+void menuCategoria(Produto* produtos, Lista& l){
+    refresh();
 	int input;
     string message = "Voce esta no mercado\n";
 	slow_print(message, 30);
@@ -25,35 +32,35 @@ void menuCategoria(){
 
 	cin >> input;
 	switch(input){
-		case 0: 
-  			menuBEBIDAS();
+		case 0:
+  			menuBEBIDAS(produtos,l);
   			break;
   		case 1:
-			menuCARNES();
+			menuCARNES(produtos,l);
 			break;
 		case 2:
-			menuFRIOS();
+			menuFRIOS(produtos,l);
 			break;
 		case 3:
-			menuHORTIFRUTI();
+			menuHORTIFRUTI(produtos,l);
 			break;
 		case 4:
-			menuLIMPEZA();
+			menuLIMPEZA(produtos,l);
 			break;
 		case 5:
-			menuPADARIA();
+			menuPADARIA(produtos,l);
 			break;
 		case 6:
 			break;
 		default:
-			menuCategoria();
+			menuCategoria(produtos,l);
 			break;
 	}
 }
 
-void menuBEBIDAS(){
+void menuBEBIDAS(Produto* produtos, Lista& l){
     refresh();
-	int input;
+	int input, IDinterno;
 	string message = "Bebidas\n";
 	slow_print(message, 80);
 
@@ -68,48 +75,68 @@ void menuBEBIDAS(){
 	cin >> input;
 	switch(input){
 		case 0:
-			 
+            IDinterno = 0;
+			verificacao(produtos, l, IDinterno);
+			menuBEBIDAS(produtos, l);
   			break;
 		case 1:
-			 
+            IDinterno = 1;
+			verificacao(produtos, l, IDinterno);
+			menuBEBIDAS(produtos, l);
 			break;
 		case 2:
-			 
+            IDinterno = 2;
+			verificacao(produtos, l, IDinterno);
+			menuBEBIDAS(produtos, l);
 			break;
 		case 3:
-			 
+            IDinterno = 3;
+			verificacao(produtos, l, IDinterno);
+			menuBEBIDAS(produtos, l);
 			break;
 		case 4:
-			 
+            IDinterno = 4;
+			verificacao(produtos, l, IDinterno);
+			menuBEBIDAS(produtos, l);
 			break;
 		case 5:
-			 
+            IDinterno = 5;
+			verificacao(produtos, l, IDinterno);
+			menuBEBIDAS(produtos, l);
 			break;
 		case 6:
-			 
+            IDinterno = 6;
+			verificacao(produtos, l, IDinterno);
+			menuBEBIDAS(produtos, l);
 			break;
 		case 7:
-			 
+            IDinterno = 7;
+			verificacao(produtos, l, IDinterno);
+			menuBEBIDAS(produtos, l);
 			break;
 		case 8:
-			 
+            IDinterno = 8;
+			verificacao(produtos, l, IDinterno);
+			menuBEBIDAS(produtos, l);
 			break;
 		case 9:
-			 
+            IDinterno = 9;
+			verificacao(produtos, l, IDinterno);
+			menuBEBIDAS(produtos, l);
 			break;
 		case 10:
-		    menuCategoria();
-			 
+		    menuCategoria(produtos,l);
+
 			break;
 		default:
-			 
+            menuBEBIDAS(produtos, l);
 			break;
     }
 }
 
-void menuCARNES(){
+void menuCARNES(Produto* produtos, Lista& l){
     refresh();
-	int input;
+	int input, IDinterno;
 	string message = "Carnes\n";
 	slow_print(message, 80);
 
@@ -124,48 +151,67 @@ void menuCARNES(){
 	cin >> input;
 	switch(input){
 		case 0:
-			 
+            IDinterno = 10;
+			verificacao(produtos, l, IDinterno);
+			menuCARNES(produtos, l);
   			break;
 		case 1:
-			 
+            IDinterno = 11;
+			verificacao(produtos, l, IDinterno);
+			menuCARNES(produtos, l);
 			break;
 		case 2:
-			 
+            IDinterno = 12;
+			verificacao(produtos, l, IDinterno);
+			menuCARNES(produtos, l);
 			break;
 		case 3:
-			 
+            IDinterno = 13;
+			verificacao(produtos, l, IDinterno);
+			menuCARNES(produtos, l);
 			break;
 		case 4:
-			 
+            IDinterno = 14;
+			verificacao(produtos, l, IDinterno);
+			menuCARNES(produtos, l);
 			break;
 		case 5:
-			 
+            IDinterno = 15;
+			verificacao(produtos, l, IDinterno);
+			menuCARNES(produtos, l);
 			break;
 		case 6:
-			 
+            IDinterno = 16;
+			verificacao(produtos, l, IDinterno);
+			menuCARNES(produtos, l);
 			break;
 		case 7:
-			 
+            IDinterno = 17;
+			verificacao(produtos, l, IDinterno);
+			menuCARNES(produtos, l);
 			break;
 		case 8:
-			 
+            IDinterno = 18;
+			verificacao(produtos, l, IDinterno);
+			menuCARNES(produtos, l);
 			break;
 		case 9:
-			 
+            IDinterno = 19;
+			verificacao(produtos, l, IDinterno);
+			menuCARNES(produtos, l);
 			break;
 		case 10:
-		    menuCategoria();
-			 
+		    menuCategoria(produtos,l);
 			break;
 		default:
-			 
+            menuCARNES(produtos, l);
 			break;
     }
 }
 
-void menuFRIOS(){
+void menuFRIOS(Produto* produtos, Lista& l){
     refresh();
-	int input;
+	int input, IDinterno;
 	string message = "Frios\n";
 	slow_print(message, 80);
 
@@ -180,48 +226,67 @@ void menuFRIOS(){
 	cin >> input;
 	switch(input){
 		case 0:
-			 
+            IDinterno = 20;
+			verificacao(produtos, l, IDinterno);
+			menuFRIOS(produtos, l);
   			break;
 		case 1:
-			 
+            IDinterno = 21;
+			verificacao(produtos, l, IDinterno);
+			menuFRIOS(produtos, l);
 			break;
 		case 2:
-			 
+            IDinterno = 22;
+			verificacao(produtos, l, IDinterno);
+			menuFRIOS(produtos, l);
 			break;
 		case 3:
-			 
+            IDinterno = 23;
+			verificacao(produtos, l, IDinterno);
+			menuFRIOS(produtos, l);
 			break;
 		case 4:
-			 
+            IDinterno = 24;
+			verificacao(produtos, l, IDinterno);
+			menuFRIOS(produtos, l);
 			break;
 		case 5:
-			 
+            IDinterno = 25;
+			verificacao(produtos, l, IDinterno);
+			menuFRIOS(produtos, l);
 			break;
 		case 6:
-			 
+            IDinterno = 26;
+			verificacao(produtos, l, IDinterno);
+			menuFRIOS(produtos, l);
 			break;
 		case 7:
-			 
+            IDinterno = 27;
+			verificacao(produtos, l, IDinterno);
+			menuFRIOS(produtos, l);
 			break;
 		case 8:
-			 
+            IDinterno = 28;
+			verificacao(produtos, l, IDinterno);
+			menuFRIOS(produtos, l);
 			break;
 		case 9:
-			 
+            IDinterno = 29;
+			verificacao(produtos, l, IDinterno);
+			menuFRIOS(produtos, l);
 			break;
 		case 10:
-		    menuCategoria();
-			 
+		    menuCategoria(produtos,l);
 			break;
 		default:
-			 
+            menuFRIOS(produtos, l);
 			break;
     }
 }
 
-void menuHORTIFRUTI(){
+void menuHORTIFRUTI(Produto* produtos, Lista& l){
     refresh();
-	int input;
+	int input, IDinterno;
 	string message = "Hortifruti\n";
 	slow_print(message, 80);
 
@@ -236,48 +301,67 @@ void menuHORTIFRUTI(){
 	cin >> input;
 	switch(input){
 		case 0:
-			 
+            IDinterno = 30;
+			verificacao(produtos, l, IDinterno);
+			menuHORTIFRUTI(produtos, l);
   			break;
 		case 1:
-			 
+            IDinterno = 31;
+			verificacao(produtos, l, IDinterno);
+			menuHORTIFRUTI(produtos, l);
 			break;
 		case 2:
-			 
+            IDinterno = 32;
+			verificacao(produtos, l, IDinterno);
+			menuHORTIFRUTI(produtos, l);
 			break;
 		case 3:
-			 
+            IDinterno = 33;
+			verificacao(produtos, l, IDinterno);
+			menuHORTIFRUTI(produtos, l);
 			break;
 		case 4:
-			 
+            IDinterno = 34;
+			verificacao(produtos, l, IDinterno);
+			menuHORTIFRUTI(produtos, l);
 			break;
 		case 5:
-			 
+            IDinterno = 35;
+			verificacao(produtos, l, IDinterno);
+			menuHORTIFRUTI(produtos, l);
 			break;
 		case 6:
-			 
+            IDinterno = 36;
+			verificacao(produtos, l, IDinterno);
+			menuHORTIFRUTI(produtos, l);
 			break;
 		case 7:
-			 
+            IDinterno = 37;
+			verificacao(produtos, l, IDinterno);
+			menuHORTIFRUTI(produtos, l);
 			break;
 		case 8:
-			 
+            IDinterno = 38;
+			verificacao(produtos, l, IDinterno);
+			menuHORTIFRUTI(produtos, l);
 			break;
 		case 9:
-			 
+            IDinterno = 39;
+			verificacao(produtos, l, IDinterno);
+			menuHORTIFRUTI(produtos, l);
 			break;
 		case 10:
-		    menuCategoria();
-			 
+		    menuCategoria(produtos,l);
 			break;
 		default:
-			 
+            menuHORTIFRUTI(produtos, l);
 			break;
     }
 }
 
-void menuLIMPEZA(){
+void menuLIMPEZA(Produto* produtos, Lista& l){
     refresh();
-	int input;
+	int input, IDinterno;
 	string message = "Produtos de Limpeza\n";
 	slow_print(message, 80);
 
@@ -292,47 +376,67 @@ void menuLIMPEZA(){
 	cin >> input;
 	switch(input){
 		case 0:
-			 
+            IDinterno = 40;
+			verificacao(produtos, l, IDinterno);
+			menuLIMPEZA(produtos, l);
   			break;
 		case 1:
-			 
+            IDinterno = 41;
+			verificacao(produtos, l, IDinterno);
+			menuLIMPEZA(produtos, l);
 			break;
 		case 2:
-			 
+            IDinterno = 42;
+			verificacao(produtos, l, IDinterno);
+			menuLIMPEZA(produtos, l);
 			break;
 		case 3:
-			 
+            IDinterno = 43;
+			verificacao(produtos, l, IDinterno);
+			menuLIMPEZA(produtos, l);
 			break;
 		case 4:
-			 
+            IDinterno = 44;
+			verificacao(produtos, l, IDinterno);
+			menuLIMPEZA(produtos, l);
 			break;
 		case 5:
-			 
+            IDinterno = 45;
+			verificacao(produtos, l, IDinterno);
+			menuLIMPEZA(produtos, l);
 			break;
 		case 6:
-			 
+            IDinterno = 46;
+			verificacao(produtos, l, IDinterno);
+			menuLIMPEZA(produtos, l);
 			break;
 		case 7:
-			 
+            IDinterno = 47;
+			verificacao(produtos, l, IDinterno);
+			menuLIMPEZA(produtos, l);
 			break;
 		case 8:
-			 
+            IDinterno = 48;
+			verificacao(produtos, l, IDinterno);
+			menuLIMPEZA(produtos, l);
 			break;
 		case 9:
-			 
+            IDinterno = 49;
+			verificacao(produtos, l, IDinterno);
+			menuLIMPEZA(produtos, l);
 			break;
 		case 10:
-		    menuCategoria();
-			 
+		    menuCategoria(produtos,l);
 			break;
 		default:
+			menuLIMPEZA(produtos, l);
 			break;
     }
 }
 
-void menuPADARIA(){
+void menuPADARIA(Produto* produtos, Lista& l){
     refresh();
-	int input;
+	int input, IDinterno;
 	string message = "Padaria\n";
 	slow_print(message, 80);
 
@@ -347,41 +451,76 @@ void menuPADARIA(){
 	cin >> input;
 	switch(input){
 		case 0:
-			 
+            IDinterno = 50;
+			verificacao(produtos, l, IDinterno);
+			menuPADARIA(produtos, l);
   			break;
 		case 1:
-			 
+            IDinterno = 51;
+			verificacao(produtos, l, IDinterno);
+			menuPADARIA(produtos, l);
 			break;
 		case 2:
-			 
+            IDinterno = 52;
+			verificacao(produtos, l, IDinterno);
+			menuPADARIA(produtos, l);
 			break;
 		case 3:
-			 
+            IDinterno = 53;
+			verificacao(produtos, l, IDinterno);
+			menuPADARIA(produtos, l);
 			break;
 		case 4:
-			 
+            IDinterno = 54;
+			verificacao(produtos, l, IDinterno);
+			menuPADARIA(produtos, l);
 			break;
 		case 5:
-			 
+            IDinterno = 55;
+			verificacao(produtos, l, IDinterno);
+			menuPADARIA(produtos, l);
 			break;
 		case 6:
-			 
+            IDinterno = 56;
+			verificacao(produtos, l, IDinterno);
+			menuPADARIA(produtos, l);
 			break;
 		case 7:
-			 
+            IDinterno = 57;
+			verificacao(produtos, l, IDinterno);
+			menuPADARIA(produtos, l);
 			break;
 		case 8:
-			 
+            IDinterno = 58;
+			verificacao(produtos, l, IDinterno);
+			menuPADARIA(produtos, l);
 			break;
 		case 9:
-			 
+            IDinterno = 59;
+			verificacao(produtos, l, IDinterno);
+			menuPADARIA(produtos, l);
 			break;
 		case 10:
-		    menuCategoria();
-			 
+		    menuCategoria(produtos,l);
 			break;
 		default:
-			 
+            menuCategoria(produtos,l);
 			break;
     }
 }
+
+void verificacao(Produto* produtos, Lista& l, int IDinterno)
+{
+    //int lixo;
+    if (l.estaNaLista(produtos[IDinterno]))
+        acertos++;
+    else
+        erros++;
+
+    //cout << "ACERTOS: " << acertos << ", ERROS: " << erros << endl;
+    //cin >> lixo;
+
+    string message = "Voce comprou " + produtos[IDinterno].getNome() + ".........";
+    slow_print(message, 30);
+};
+

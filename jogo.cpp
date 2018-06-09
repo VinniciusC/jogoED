@@ -37,7 +37,7 @@ int prefacio(){ //Tela inicial que conta a hist�ria inicial
 }
 
 int lista_inicial(Produto *produtos, Lista& comprasMae){ //Tela que gera a lista de compras aleatoriamente e printa na tela
-    
+
     int opcao = 1;
 	telaMemorizar(produtos, comprasMae);
     string message = "Aperte 0 para continuar...\n\n";
@@ -46,13 +46,13 @@ int lista_inicial(Produto *produtos, Lista& comprasMae){ //Tela que gera a lista
     while(opcao != 0){
         cin >> opcao;
     }
-    
+
 	refresh();
     return opcao;
 }
 
 int prefacio_2(){ //Tela que conta a hist�ria da perda da lista
-    
+
     int opcao = 1;
 
     string message = "Ao chegar no mercado, voce percebe que perdeu a LISTA DE COMPRAS\n";
@@ -79,20 +79,20 @@ int main(){
     int opcao;
     Produto produtos[60];
     Lista comprasMae;
-    
+
     cadastraProdutos(produtos);
 
-    opcao = prefacio();
+    /*opcao = prefacio();
 
-    if(opcao == 0)
+    if(opcao == 0)*/
         opcao = lista_inicial(produtos, comprasMae);
 
-    if(opcao == 0)
+    /*if(opcao == 0)
         opcao = prefacio_2();
 
-    if(opcao == 0){
-        menuCategoria();
-    }
+    if(opcao == 0){*/
+        menuCategoria(produtos,comprasMae);
+    //}
 
 
 
