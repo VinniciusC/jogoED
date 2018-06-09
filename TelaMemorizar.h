@@ -1,20 +1,14 @@
 #ifndef TELAMEMORIZAR_H_INCLUDED
 #define TELAMEMORIZAR_H_INCLUDED
-
 #ifdef __cplusplus__
   #include <cstdlib>
 #else
   #include <stdlib.h>
 #endif
-
 #include <iostream>
 #include <time.h>
-
 #include "CadastraProdutos.h"
-
-void refresh(){
-	if (system("CLS")) system("clear");
-}
+#include "funcoes_comuns.h"
 
 void imprimeLista(Lista& l1)
 {
@@ -66,19 +60,11 @@ void gerarListaAletoria(Produto* produtos, Lista& l)
 }
 
 int telaMemorizar(Produto* produtos, Lista& comprasMae){
-    //refresh();
+
     int opcao = 1;
 
     gerarListaAletoria(produtos,comprasMae);
     imprimeLista(comprasMae);
-
-    cout << "Aperte 0 para continuar..." << endl << endl;
-
-    while(opcao != 0){
-        cin >> opcao;
-    }
-
-    refresh();
 
     return opcao;
 }
