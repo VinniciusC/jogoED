@@ -1,8 +1,17 @@
 #include <iostream>
 #include "ListaProdutos.h"
 #include "CadastraProdutos.h"
+#ifdef __cplusplus__
+  #include <cstdlib>
+#else
+  #include <stdlib.h>
+#endif
 
 using namespace std;
+
+void refresh(){
+	if (system("CLS")) system("clear");
+}
 
 int prefacio(){
     //Tela 1 - Prefácio
@@ -26,6 +35,8 @@ int lista_inicial(){
 }
 
 int prefacio_2(){
+
+    refresh();
     //Tela 3 - Perda da LISTA DE COMPRAS
     int opcao = 1;
 
@@ -46,24 +57,6 @@ int main(){
     int opcao;
 
     opcao = prefacio();
-
-    if (opcao == 0)
-    {
-        opcao = 1;
-
-        Produto produtos[60];
-
-        cadastraProdutos(produtos);
-        for (int i = 0; i < 60; i++)
-            cout << produtos[i].getNome() << endl;
-
-        cout << "Aperte 0 para continuar..." << endl << endl;
-
-        while(opcao != 0){
-            cin >> opcao;
-        }
-
-    }
 
     if(opcao == 0)
         opcao = prefacio_2();
