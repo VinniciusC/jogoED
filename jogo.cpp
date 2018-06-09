@@ -11,14 +11,6 @@ using std::this_thread::sleep_for;
 using std::chrono::milliseconds;
 
 
-void slow_print(const  string &message, unsigned int millis_per_char){ //Funcao para dar o efeito de digita��o nas mensagens
-    for(const char c: message)
-    {
-        cout << c << flush;
-        sleep_for(milliseconds(millis_per_char));
-    }
-}
-
 int prefacio(){ //Tela inicial que conta a hist�ria inicial
     refresh();
 
