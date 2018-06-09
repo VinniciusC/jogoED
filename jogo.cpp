@@ -2,17 +2,9 @@
 #include "ListaProdutos.h"
 #include "CadastraProdutos.h"
 #include "menus.h"
-#ifdef __cplusplus__
-  #include <cstdlib>
-#else
-  #include <stdlib.h>
-#endif
+#include "funcoes_comuns.h"
 
 using namespace std;
-
-void refresh(){
-	if (system("CLS")) system("clear");
-}
 
 int prefacio(){
     //Tela 1 - Prefácio
@@ -30,10 +22,6 @@ int prefacio(){
     return opcao;
 }
 
-int lista_inicial(){
-    //Tela 2 - Gera a lista aleatoriamente e printa na tela
-
-}
 
 int prefacio_2(){
 

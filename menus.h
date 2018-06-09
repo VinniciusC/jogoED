@@ -1,4 +1,6 @@
 #include <iostream>
+#include "funcoes_comuns.h"
+
 void menuCategoria(){
     refresh();
 	int input;
