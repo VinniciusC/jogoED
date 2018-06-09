@@ -8,6 +8,7 @@ using namespace std;
 class Produto
 {
 public:
+    Produto(int novoID=0, string novoNome="");
     int getID() const;
     string getNome() const;
     void setID(int novoID);

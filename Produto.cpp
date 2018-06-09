@@ -4,6 +4,12 @@
 
 using namespace std;
 
+Produto::Produto(int novoID, string novoNome)
+{
+    setID(novoID);
+    setNome(novoNome);
+}
+
 int Produto::getID() const
 {
     return ID;
