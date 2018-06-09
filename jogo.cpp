@@ -1,10 +1,11 @@
 #include <iostream>
 #include "ListaProdutos.h"
+#include "CadastraProdutos.h"
 
 using namespace std;
 
-int prefacio(){ 
-    //Tela 1 - Pref√°cio
+int prefacio(){
+    //Tela 1 - Pref·cio
     int opcao = 1;
 
     cout << "Sua mae te mandou ir ao mercado fazer compras." << endl;
@@ -31,7 +32,7 @@ int prefacio_2(){
     cout << "Ao chegar no mercado, voce percebe que perdeu a LISTA DE COMPRAS" << endl;
     cout << "Conhecendo bem sua mae, voce sabe que nao pode voltar de maos vazias, muito menos com os produtos errados." << endl;
     cout << "Navegue pelo menu e efetue a compra dos itens corretos." << endl << endl;
-    cout << "Aperto 0 para continuar..." << endl << endl;
+    cout << "Aperte 0 para continuar..." << endl << endl;
 
     while(opcao != 0){
         cin >> opcao;
@@ -41,13 +42,33 @@ int prefacio_2(){
 }
 
 int main(){
-    
+
     int opcao;
 
     opcao = prefacio();
 
+    if (opcao == 0)
+    {
+        opcao = 1;
+
+        Produto produtos[60];
+
+        cadastraProdutos(produtos);
+        for (int i = 0; i < 60; i++)
+            cout << produtos[i].getNome() << endl;
+
+        cout << "Aperte 0 para continuar..." << endl << endl;
+
+        while(opcao != 0){
+            cin >> opcao;
+        }
+
+    }
+
     if(opcao == 0)
         opcao = prefacio_2();
+
+
 
     return 0;
 }
