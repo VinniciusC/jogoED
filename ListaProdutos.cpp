@@ -1,9 +1,5 @@
 #include "ListaProdutos.h"
 
-#include <iostream>
-
-using namespace std;
-
 // ********** OPERADORES TAD **********
 
 Lista::Lista()
@@ -148,3 +144,30 @@ bool Lista::procuraX(const Produto& elemento, NodePtr& p, NodePtr& anterior) con
     else
         return false;
 }
+
+
+void Lista::imprimeLista()
+{
+    Produto elemento;
+
+    if (pegaPrimeiro(elemento))
+    {
+        cout << elemento.getNome() << endl;;
+
+        while (pegaProximo(elemento))
+            cout << elemento.getNome() << endl;
+
+        cout << endl;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

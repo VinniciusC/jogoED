@@ -1,10 +1,7 @@
-#ifndef LISTAPRODUTOS_H_INCLUDED
-#define LISTAPRODUTOS_H_INCLUDED
+#ifndef LISTAPRODUTOS_H
+#define LISTAPRODUTOS_H
 
 #include "Produto.h"
-#include <iostream>
-
-using namespace std;
 
 class Lista
 {
@@ -21,6 +18,8 @@ private:
     NodePtr atual;
 
 public:
+
+    //******************** OPERADORES TAD ********************
     Lista();
     ~Lista();
     bool estaNaLista(const Produto& elemento) const;
@@ -31,8 +30,13 @@ public:
     bool pegaPrimeiro(Produto& elemento);
     bool pegaProximo(Produto& elemento);
 
-    bool procuraX(const Produto& elemento, NodePtr& p, NodePtr& anterior) const; //NÃO É OPERADOR TAD
+    //******************** OPERADORES AUXILIARES ********************
+    bool procuraX(const Produto& elemento, NodePtr& p, NodePtr& anterior) const;
+    void imprimeLista();
+
+    //******************** METODOS AMIGOS ********************
+    friend void geraListaAletoria(Produto* produtos, Lista& l);
 };
 
 
-#endif // LISTAPRODUTOS_H_INCLUDED
+#endif

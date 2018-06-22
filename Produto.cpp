@@ -1,9 +1,5 @@
 #include "Produto.h"
 
-#include <iostream>
-
-using namespace std;
-
 Produto::Produto(int novoID, string novoNome)
 {
     setID(novoID);
