@@ -10,13 +10,16 @@ class Produto
 private:
     int ID;
     string nome;
+    string departamento;
 
 public:
-    Produto(int novoID = 0, string novoNome = "");
+    Produto(int novoID = 0, string novoNome = "", string novoDepartamento="");
     int getID() const;
     string getNome() const;
+    string getDepartamento() const;
     void setID(int novoID);
     void setNome(string novoNome);
+    void setDepartamento(string novoDepartamento);
 
     friend void cadastraProdutos(Produto* produtos);
 };

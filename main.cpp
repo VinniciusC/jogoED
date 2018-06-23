@@ -1,4 +1,3 @@
-#include "menus.h"
 #include "Telas.h"
 
 int main()
@@ -18,7 +17,7 @@ int main()
         opcao = telaInicial2();
 
     if(opcao == 0)
-        menuCategoria(produtos, comprasMae);
+        menuMercado(produtos, comprasMae);
 
     return 0;
 }

@@ -145,7 +145,6 @@ bool Lista::procuraX(const Produto& elemento, NodePtr& p, NodePtr& anterior) con
         return false;
 }
 
-
 void Lista::imprimeLista()
 {
     Produto elemento;
@@ -160,14 +159,3 @@ void Lista::imprimeLista()
         cout << endl;
     }
 }
-
-
-
-
-
-
-
-
-
-
-

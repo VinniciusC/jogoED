@@ -3,7 +3,23 @@
 void cadastraProdutos(Produto* produtos)
 {
     for (int i = 0; i < 60; i++)
+    {
         produtos[i].setID(i);
+
+        if (i < 10)
+            produtos[i].setDepartamento("Bebidas");
+        else if (i >= 10 && i < 20)
+            produtos[i].setDepartamento("Carnes");
+        else if (i >= 20 && i < 30)
+            produtos[i].setDepartamento("Frios");
+        else if (i >= 30 && i < 40)
+            produtos[i].setDepartamento("Hortifruti");
+        else if (i >= 40 && i < 50)
+            produtos[i].setDepartamento("Produtos de Limpeza");
+        else if (i >= 50 && i < 60)
+            produtos[i].setDepartamento("Padaria");
+    }
+
 
     produtos[0].setNome("Refrigerante");
     produtos[1].setNome("Corote");

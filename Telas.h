@@ -4,8 +4,11 @@
 #include "ModulosComuns.h"
 #include "ListaProdutos.h"
 
-int telaInicial();                                        //Tela inicial que conta a historia inicial
-int telaMemorizar(Produto* produtos, Lista& comprasMae);  //Tela que gera a lista de compras aleatoriamente e printa na tela
-int telaInicial2();                                       //Tela que conta a historia da perda da lista
+int telaInicial();                                                  //Tela inicial que conta a historia inicial
+int telaMemorizar(Produto* produtos, Lista& comprasMae);            //Tela que gera a lista de compras aleatoriamente e printa na tela
+int telaInicial2();                                                 //Tela que conta a historia da perda da lista
+void menuMercado(Produto* produtos, Lista& l);
+void menuDepartamentos(int departamento, Produto* produtos, Lista& l);
+void menuFinal(Lista& l);
 
 #endif

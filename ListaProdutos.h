@@ -36,6 +36,7 @@ public:
 
     //******************** METODOS AMIGOS ********************
     friend void geraListaAletoria(Produto* produtos, Lista& l);
+    friend void estaNaListaAleatoria(Produto* produtos, Lista& l, int ID);
 };
 
 
