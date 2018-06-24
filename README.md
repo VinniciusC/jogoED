@@ -17,8 +17,19 @@ O JOGO
 	Para executar o jogo no Code Blocks e no Dev C++, é necessário configurar o compilador para C++11.
 	
 	Para linux:
- 		g++ .c .h -o jogo
+ 		g++ .*c .*h -o jogo
 		./jogo
+		
+	Para configuar para funcionar no CodeBlocks, é necessário ir em:
+		Criar um novo projeto: File -> New -> Project... -> Console application -> Go -> C++
+		Após escolher o nome do projeto pressione Next -> Finish
+		Remova o arquivo já existente no projento clicando em Soucers -> botão direito no main.cpp -> Remove file from project
+		Após isso clique com o botão direito no seu projeto e Add Files -> e selecione todos os arquivos .cpp e .h enviados
+		Após isso é necessário configurar a flag c++11. Para isso, é necessário ir em:
+		Projects -> BuildOptions
+		Em ambas as abas de Debug e Release, na aba Compiler Settings -> Compiler Flags habilitar a opção
+		Have g++ follow the C++11 ISO C++ language standard [-std=c++11]
+		Para compilar e executar o projeto basta clicar F9
 		
 	O jogo foi feito em c++. Na lógica do jogo, há uma série de condições if que escolhem o destino do jogo de acordo com um input. Como, por exemplo, em menuDepartamentos(int departamento, Produto* produtos, Lista& l), em que é mostrado um menu com os setores do mercado e também a opção “voltar para casa” e, em seguida, é solicitado que o jogador insira um número. Conforme o número inserido, o jogador continua no mesmo menu ou recebe uma mensagem de erro ou é encaminhado para algum setor do mercado com uma série de produtos, que podem ou não estar entre os 60 produtos na lista de compras.
 	
