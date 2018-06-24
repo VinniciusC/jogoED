@@ -11,6 +11,7 @@ TRABALHO 2 – LISTA - ESTRUTURA DE DADOS
     VINICIUS PANSARIM 743603
     
 O JOGO
+
 	O jogo feito nesse trabalho representa uma compra no mercado. Nele, um garoto fará a compra de acordo com a lista de sua mãe. Mas, como ele a perde, terá de lembrar de todos os itens. O jogador será o garoto e, caso ele erre algum objeto da lista, receberá uma mensagem diferente da que ele receberia se acertasse todos os objetos da lista de compras de sua mãe.
 	
 	Para executar o jogo no Code Blocks e no Dev C++, é necessário configurar o compilador para C++11.
@@ -42,6 +43,7 @@ O JOGO
 	A função quantidadesCertosErrados verifica se cada produto comprado pelo menino está na lista de compras. Caso esteja, o número de acertos é incrementado. Caso não esteja, o número de erros é incrementado. 
   
 A LISTA
+
 	No jogo, a lista de compras da mãe com 7 produtos perdida é uma lista de tipo abstrato de dados. A lista de compras é gerada por meio de um random sem repetição que seleciona um número de 0 a 59, referente ao ID de algum produto do mercado. A cada ID selecionado, um produto é inserido na lista.
 	
 	Além disso, a lista é impressa na tela, para que, o jogador consiga memorizá-la. 
