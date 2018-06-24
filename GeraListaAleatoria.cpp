@@ -5,7 +5,7 @@ void geraListaAletoria(Produto* produtos, Lista& l)
 {
 	srand(time(NULL));
 
-	int n[10];
+	int n[7];
 
 	for (int i = 0; i < 10; i++) //Loop externo que sorteia um numero entre 0 e 59
     {
@@ -21,7 +21,7 @@ void geraListaAletoria(Produto* produtos, Lista& l)
 		}
 	}
 
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < 7; i++)
     {
         for (int j = 0; j < 60; j++) //Para cada numero sorteado, eh inserido o produto equivalente aos existentes
         {

@@ -153,13 +153,13 @@ void menuFinal(Lista& l)
     refresh();
 	cout << "Certos "<<certos << endl;
 	cout << "Errados "<<errados << endl;
-    if (certos == 10 && errados == 0)
+    if (certos == 7 && errados == 0)
         cout << "Voce voltou pra casa e sua mae lhe disse que voce nao fez mais que sua obrigacao" << endl;
-    else if (certos == 10 && errados <= 3)
+    else if ((errados + certos)>=8 && (errados + certos)<12 ) 
         cout << "Voce voltou pra casa e sua mae ficou furiosa por ter comprado itens a mais, uma penalidade sera aplicada na mesada" << endl;
-    else if ((errados + certos) >= 15)
+    else if ((errados + certos) >= 12)
         cout << "Voce gastou todo dinheiro da sua mae, e nao vai receber mesada no mes seguinte" << endl;
-    else if ((errados + certos) < 10)
+    else if ((certos + errados) < 7)
         cout << "Voce voltou pra casa e sua mae ficou furiosa por nao ter comprado os itens que ela lhe pediu" << endl;
     else
         cout << "Parabens, voce atingiu um final que os programadores nao pensaram" << endl;
