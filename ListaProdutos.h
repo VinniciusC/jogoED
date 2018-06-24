@@ -33,10 +33,11 @@ public:
     //******************** OPERADORES AUXILIARES ********************
     bool procuraX(const Produto& elemento, NodePtr& p, NodePtr& anterior) const;
     void imprimeLista();
+    int quantidadeElementos();
 
     //******************** METODOS AMIGOS ********************
     friend void geraListaAletoria(Produto* produtos, Lista& l);
-    friend void estaNaListaAleatoria(Produto* produtos, Lista& l, int ID);
+    friend void quantidadeCertosErrados(Lista& comprasMae, Lista& comprasFilho, int& certos, int& errados);
 };
 
 

@@ -159,3 +159,23 @@ void Lista::imprimeLista()
         cout << endl;
     }
 }
+
+int Lista::quantidadeElementos()
+{
+    Produto elemento;
+    int total = 0;;
+
+    if (!estaVazia())
+    {
+        if (pegaPrimeiro(elemento))
+        {
+            total++;
+
+            while (pegaProximo(elemento))
+                total++;
+        }
+    }
+
+    return total;
+}
+
