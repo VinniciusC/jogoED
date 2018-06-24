@@ -17,7 +17,7 @@ O JOGO
 	Para executar o jogo no Code Blocks e no Dev C++, é necessário configurar o compilador para C++11.
 	
 	Para linux:
- 		g++ .*c .*h -o jogo
+ 		g++ *.c *.h -o jogo
 		./jogo
 		
 	Para configuar para funcionar no CodeBlocks, é necessário ir em:
